@@ -1,2 +1,23 @@
 # Quiz
- O programa funciona como um quiz e foi desenvolvido para ser utilizado como avaliação parcial na faculdade. Onde é possível cadastrar as perguntas, 4 alternativas, 1 resposta correta. O jogador se cadastra para jogar, Ao responder as perguntas é verificado se sua resposta selecionada é a mesma que foi cadastrada como correta. O jogador tem 30 segundos para responder a questão. Senão houver resposta a mesma é considerada como incorreta e passa para a próxima pergunta. Ao final das perguntas é exibido o ranking dos jogadores, onde é possível consultar a data, hora, nome, questões certas e percentual de acerto dos jogadores..
+ O programa funciona como um quiz e foi desenvolvido para ser utilizado como avaliação parcial na faculdade. 
+ Nesse programa, é possível:
+ PERGUNTAS
+  Cadastrar as perguntas;
+  Cadastrar 4 alternativas;
+  Cadastrar 1 resposta correta. 
+ 
+ JOGAR
+  Cadastrar o jogar;
+ 
+ QUIZ
+  O jogador cadastrado, pode responder a pergunta atual durante 30 segundos.
+  É verificado se sua resposta selecionada é a mesma que foi cadastrada como correta. 
+  Senão houver uma resposta selecionada ao fim dos 30 segundos a resposta será considerada como incorreta e o programa passa para a próxima pergunta. 
+ 
+ RANKING
+  Ao final das perguntas é exibido o ranking com os dados dos jogadores, onde é possível consultar:
+   a data;
+   hora;
+   jogador; 
+   questões certas;
+   percentual de acertos
