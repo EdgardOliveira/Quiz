@@ -23,26 +23,32 @@ namespace N2Quiz.controllers
             {
                 CriarCabecalho = true;                    
             }
-
-            //Adicionando dados ao arquivo
-            using (StreamWriter arquivo = File.AppendText(CaminhoCompleto))
+            try
             {
-                string data = DateTime.Now.Date.ToString("dd/MM/yyyy");
-                string hora = DateTime.Now.ToString("HH:mm:ss");               
+                //Adicionando dados ao arquivo
+                using (StreamWriter arquivo = File.AppendText(CaminhoCompleto))
+                {
+                    string data = DateTime.Now.Date.ToString("dd/MM/yyyy");
+                    string hora = DateTime.Now.ToString("HH:mm:ss");
 
-                if (CriarCabecalho)
-                    arquivo.WriteLine("Data;Hora;Jogador;Questoes;Pontuacao");
+                    if (CriarCabecalho)
+                        arquivo.WriteLine("Data;Hora;Jogador;Questoes;Pontuacao");
 
-                arquivo.WriteLine("{0};{1};{2};{3};{4}",
-                            data,                                   //0-Data
-                            hora,                                   //1-Hora
-                            jogador.Nome,                           //2-Nome do jogador
-                            jogador.NumeroQuestoes.ToString(),      //3-Acertos
-                            String.Format("{0:0.00}", jogador.Pontuacao)    //4-Pontuação (%)
-                    );
+                    arquivo.WriteLine("{0};{1};{2};{3};{4}",
+                                data,                                           //0-Data
+                                hora,                                           //1-Hora
+                                jogador.Nome,                                   //2-Nome do jogador
+                                String.Format("{0:000}", jogador.NumeroQuestoes),//3-Acertos
+                                String.Format("{0:000.00}", jogador.Pontuacao)   //4-Pontuação (%)
+                        );
+                }
+            }
+            catch (Exception e )
+            {
+                Console.WriteLine("Ocorreu um erro: " + e.Message);
             }
         }
-        
+
         public bool SalvarPergunta(Pergunta pergunta, string Diretorio, string Arquivo)
         {
             bool status = false;
@@ -111,7 +117,7 @@ namespace N2Quiz.controllers
                 else
                 {
                     //lendo o conteúdo do arquivo e armazenando na memória
-                    StreamReader streamReader = new StreamReader(CaminhoCompleto);
+                    using (StreamReader streamReader = new StreamReader(CaminhoCompleto))
                     {
                         //lendo uma linha da memória
                         string linha = streamReader.ReadLine();

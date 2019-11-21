@@ -1,25 +1,28 @@
 ﻿using N2Quiz.controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace N2Quiz
 {
     public partial class FrmPergunta : Form
     {
+        /// <summary>
+        /// Atributos
+        /// </summary>
         private int SelecaoResposta = 0;
 
+        /// <summary>
+        /// Construtor da classe
+        /// </summary>
         public FrmPergunta()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Método responsável por validar os dados inseridos pelo usuário na tela
+        /// </summary>
+        /// <returns>false - se os dados são inválidos, true - se os dados são válidos</returns>
         private bool ValidarDados()
         {
             bool status = true;
@@ -48,13 +51,17 @@ namespace N2Quiz
 
             return status;
         }
-
+        /// <summary>
+        /// Método responsável por salvar os dados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             if (ValidarDados())
             {
                 Pergunta pergunta = new Pergunta();
-                pergunta.Questao = txtbxPergunta.Text;
+                pergunta.Questao = txtbxPergunta.Text.ToUpper();
                 switch (SelecaoResposta)
                 {
                     case 1:
@@ -70,10 +77,10 @@ namespace N2Quiz
                         pergunta.Resposta = "D";
                         break;
                 }
-                pergunta.AlternativaA = txtbxAlternativaA.Text;
-                pergunta.AlternativaB = txtbxAlternativaB.Text;
-                pergunta.AlternativaC = txtbxAlternativaC.Text;
-                pergunta.AlternativaD = txtbxAlternativaD.Text;
+                pergunta.AlternativaA = txtbxAlternativaA.Text.ToUpper();
+                pergunta.AlternativaB = txtbxAlternativaB.Text.ToUpper();
+                pergunta.AlternativaC = txtbxAlternativaC.Text.ToUpper();
+                pergunta.AlternativaD = txtbxAlternativaD.Text.ToUpper();
 
                 Arquivo arquivo = new Arquivo();
                 if (arquivo.SalvarPergunta(pergunta, Application.StartupPath, Globais.ARQ_PERGUNTAS))
@@ -89,27 +96,48 @@ namespace N2Quiz
                 MessageBox.Show("É necessário preencher todos os dados para concluir.", "Erro de preenchimento", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
+        /// <summary>
+        /// Método responsável por marcar a seleção da resposta certa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rdbtnAlternativaA_CheckedChanged(object sender, EventArgs e)
         {
             SelecaoResposta = 1; //A
         }
-
+        /// <summary>
+        /// Método responsável por marcar a seleção da resposta certa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             SelecaoResposta = 2; //B
         }
-
+        /// <summary>
+        /// Método responsável por marcar a seleção da resposta certa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             SelecaoResposta = 3; //C
         }
 
+        /// <summary>
+        /// Método responsável por marcar a seleção da resposta certa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             SelecaoResposta = 4; //D
         }
-
+        /// <summary>
+        /// Método responsável por fechar a tela
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();

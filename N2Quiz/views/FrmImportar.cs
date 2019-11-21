@@ -10,11 +10,19 @@ namespace N2Quiz
 {
     public partial class FrmImportar : Form
     {
+        /// <summary>
+        /// Construtor da classe
+        /// </summary>
         public FrmImportar()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Método responsável por carregar os dados no datagridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnImportar_Click(object sender, EventArgs e)
         {
             string CaminhoCompleto = Path.Combine(Application.StartupPath, Globais.ARQ_PERGUNTAS);

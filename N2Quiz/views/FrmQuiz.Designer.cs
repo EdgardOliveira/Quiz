@@ -449,6 +449,7 @@
             this.Text = "Quiz";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.FrmQuiz_Activated);
+            this.Shown += new System.EventHandler(this.FrmQuiz_Shown);
             this.panelPergunta.ResumeLayout(false);
             this.panelPergunta.PerformLayout();
             this.panel2.ResumeLayout(false);

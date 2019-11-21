@@ -306,10 +306,15 @@ namespace N2Quiz
             pnlResultado.BackgroundImage = null;
             lblJogador.Text = "Jogador: " + jogador.Nome.ToUpper();
             lblPontuacao.Text = "Pontuação: " + jogador.NumeroQuestoes.ToString() + "pts";
-            lblPercentualAcerto.Text = "Acertos: " + jogador.Pontuacao.ToString() + "%";
+            lblPercentualAcerto.Text = "Acertos: " + jogador.Pontuacao.ToString("0.00") + "%";
         }
 
         private void FrmQuiz_Activated(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FrmQuiz_Shown(object sender, EventArgs e)
         {
             AtualizarDadosTela();
         }

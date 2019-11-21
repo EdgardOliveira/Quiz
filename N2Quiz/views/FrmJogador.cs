@@ -5,11 +5,18 @@ namespace N2Quiz
 {
     public partial class FrmJogador : Form
     {
+        /// <summary>
+        /// Construtor da classe
+        /// </summary>
         public FrmJogador()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Método responsável por validar os dados inseridos pelo usuário na tela
+        /// </summary>
+        /// <returns>false - se os dados são inválidos, true - se os dados estão válidos</returns>
         private bool ValidarCampos()
         {
             bool status = true;
@@ -20,6 +27,11 @@ namespace N2Quiz
             return status;
         }
 
+        /// <summary>
+        /// Método responsável por registrar o jogador
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegistrarJogar_Click(object sender, EventArgs e)
         {
             
@@ -37,7 +49,7 @@ namespace N2Quiz
             }            
         }
 
-        private void FrmJogador_Activated(object sender, EventArgs e)
+        private void FrmJogador_Shown(object sender, EventArgs e)
         {
             txtbxNome.Focus();
         }
