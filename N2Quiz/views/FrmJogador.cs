@@ -37,7 +37,7 @@ namespace N2Quiz
             
             if (ValidarCampos())
             {
-                Jogador jogador = new Jogador(txtbxNome.Text.ToUpper(), 0, 0);
+                Jogador jogador = new Jogador(txtbxNome.Text.ToUpper(), 0, 0, 0, 0);
                 FrmQuiz tela = new FrmQuiz(jogador);
                 this.Dispose();
                 tela.Show();
@@ -52,6 +52,15 @@ namespace N2Quiz
         private void FrmJogador_Shown(object sender, EventArgs e)
         {
             txtbxNome.Focus();
+        }
+
+        private void txtbxNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                e.Handled = true;
+                SendKeys.Send("{tab}");
+            }
         }
     }
 }

@@ -59,12 +59,13 @@ namespace N2Quiz
 
             this.Tempo = tempo;
 
-            if ((tempo>0) && (LetraResposta.Equals(this.Resposta.ToUpper())))
+            if ((!String.IsNullOrEmpty(LetraResposta))&&
+                (tempo>0) && (LetraResposta.Equals(this.Resposta.ToUpper())))
                 status = true;
 
             Console.WriteLine("Tempo: " + tempo +
                   "\nResposta: " + this.Resposta.ToUpper() +
-                  "\nLetra Selecionada: " + LetraResposta +
+                  "\nLetra Selecionada: " + LetraResposta.ToUpper() +
                   "\nStatus: " + status);
 
             return status;

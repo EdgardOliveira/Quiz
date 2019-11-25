@@ -38,8 +38,8 @@ namespace N2Quiz.controllers
                                 data,                                           //0-Data
                                 hora,                                           //1-Hora
                                 jogador.Nome,                                   //2-Nome do jogador
-                                String.Format("{0:000}", jogador.NumeroQuestoes),//3-Acertos
-                                String.Format("{0:000.00}", jogador.Pontuacao)   //4-Pontuação (%)
+                                String.Format("{0:000}", jogador.Acertos),//3-Acertos
+                                String.Format("{0:000.00}", jogador.PercAcertos)   //4-Pontuação (%)
                         );
                 }
             }

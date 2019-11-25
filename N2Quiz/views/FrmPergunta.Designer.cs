@@ -145,7 +145,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(1155, 408);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(134, 34);
-            this.btnCancelar.TabIndex = 16;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -156,7 +156,8 @@
             this.txtbxAlternativaD.Location = new System.Drawing.Point(68, 399);
             this.txtbxAlternativaD.Name = "txtbxAlternativaD";
             this.txtbxAlternativaD.Size = new System.Drawing.Size(407, 29);
-            this.txtbxAlternativaD.TabIndex = 15;
+            this.txtbxAlternativaD.TabIndex = 4;
+            this.txtbxAlternativaD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxPergunta_KeyPress);
             // 
             // btnSalvar
             // 
@@ -188,7 +189,8 @@
             this.txtbxAlternativaC.Location = new System.Drawing.Point(68, 329);
             this.txtbxAlternativaC.Name = "txtbxAlternativaC";
             this.txtbxAlternativaC.Size = new System.Drawing.Size(407, 29);
-            this.txtbxAlternativaC.TabIndex = 13;
+            this.txtbxAlternativaC.TabIndex = 3;
+            this.txtbxAlternativaC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxPergunta_KeyPress);
             // 
             // lblAlternativaC
             // 
@@ -206,7 +208,8 @@
             this.txtbxAlternativaB.Location = new System.Drawing.Point(68, 260);
             this.txtbxAlternativaB.Name = "txtbxAlternativaB";
             this.txtbxAlternativaB.Size = new System.Drawing.Size(407, 29);
-            this.txtbxAlternativaB.TabIndex = 11;
+            this.txtbxAlternativaB.TabIndex = 2;
+            this.txtbxAlternativaB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxPergunta_KeyPress);
             // 
             // lblAlternativaB
             // 
@@ -224,7 +227,8 @@
             this.txtbxAlternativaA.Location = new System.Drawing.Point(68, 194);
             this.txtbxAlternativaA.Name = "txtbxAlternativaA";
             this.txtbxAlternativaA.Size = new System.Drawing.Size(407, 29);
-            this.txtbxAlternativaA.TabIndex = 9;
+            this.txtbxAlternativaA.TabIndex = 1;
+            this.txtbxAlternativaA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxPergunta_KeyPress);
             // 
             // lblAlternativaA
             // 
@@ -256,7 +260,7 @@
             this.radioButton3.Location = new System.Drawing.Point(309, 28);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(42, 26);
-            this.radioButton3.TabIndex = 10;
+            this.radioButton3.TabIndex = 3;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "D";
             this.radioButton3.UseVisualStyleBackColor = true;
@@ -268,7 +272,7 @@
             this.radioButton2.Location = new System.Drawing.Point(213, 28);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(42, 26);
-            this.radioButton2.TabIndex = 9;
+            this.radioButton2.TabIndex = 2;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "C";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -280,7 +284,7 @@
             this.radioButton1.Location = new System.Drawing.Point(116, 28);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(42, 26);
-            this.radioButton1.TabIndex = 8;
+            this.radioButton1.TabIndex = 1;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "B";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -292,7 +296,7 @@
             this.rdbtnAlternativaA.Location = new System.Drawing.Point(17, 28);
             this.rdbtnAlternativaA.Name = "rdbtnAlternativaA";
             this.rdbtnAlternativaA.Size = new System.Drawing.Size(41, 26);
-            this.rdbtnAlternativaA.TabIndex = 7;
+            this.rdbtnAlternativaA.TabIndex = 0;
             this.rdbtnAlternativaA.TabStop = true;
             this.rdbtnAlternativaA.Text = "A";
             this.rdbtnAlternativaA.UseVisualStyleBackColor = true;
@@ -304,7 +308,8 @@
             this.txtbxPergunta.Location = new System.Drawing.Point(68, 45);
             this.txtbxPergunta.Name = "txtbxPergunta";
             this.txtbxPergunta.Size = new System.Drawing.Size(857, 29);
-            this.txtbxPergunta.TabIndex = 4;
+            this.txtbxPergunta.TabIndex = 0;
+            this.txtbxPergunta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxPergunta_KeyPress);
             // 
             // lblPergunta
             // 
@@ -328,6 +333,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPergunta";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Shown += new System.EventHandler(this.FrmPergunta_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -128,6 +128,7 @@
             this.txtbxNome.Name = "txtbxNome";
             this.txtbxNome.Size = new System.Drawing.Size(464, 29);
             this.txtbxNome.TabIndex = 4;
+            this.txtbxNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxNome_KeyPress);
             // 
             // lblNome
             // 

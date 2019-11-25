@@ -9,19 +9,23 @@ namespace N2Quiz
     class Jogador
     {
         public string Nome { get; set; }
-        public int NumeroQuestoes { get; set; }
-        public double Pontuacao { get; set; }
+        public int Acertos { get; set; }
+        public int Erros { get; set; }
+        public double PercAcertos { get; set; }
+        public  double PercErros { get; set; }
 
         public Jogador()
         {
 
         }
 
-        public Jogador(string nome, int numeroQuestoes, double pontuacao)
+        public Jogador(string nome, int acertos, double percAcertos, int erros, double percErros)
         {
             this.Nome = nome;
-            this.NumeroQuestoes = numeroQuestoes;
-            this.Pontuacao = pontuacao;
+            this.Acertos = acertos;
+            this.PercAcertos = percAcertos;
+            this.Erros = erros;
+            this.PercErros = percErros;
         }
     }
 }

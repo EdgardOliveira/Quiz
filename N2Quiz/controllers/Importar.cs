@@ -37,6 +37,7 @@ namespace N2Quiz.controllers
                 {
                     //lendo uma linha da memória
                     string linha = streamReader.ReadLine();
+
                     //procura pelo caracter separador e separa
                     string[] arrayPergunta = linha.Split(';');
 
@@ -52,8 +53,10 @@ namespace N2Quiz.controllers
                     {
                         //lê uma linha da memória
                         linha = streamReader.ReadLine();
+
                         //procura pelo caractere separador e separa
                         arrayPergunta = linha.Split(';');
+
                         //adiciona o array na tabela
                         dataTable.Rows.Add(arrayPergunta);
                     }
@@ -70,11 +73,16 @@ namespace N2Quiz.controllers
         /// <param name="dataTable">Recebe a tabela de dados</param>
         public void ConvertDataTableToList (DataTable dataTable)
         {
+            //instanciando uma lista de perguntas
             ListaPerguntas = new List<Pergunta>();
 
+            //percorrendo a tabela até o fim
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
+                //instanciando a classe pergunta
                 Pergunta pergunta = new Pergunta();
+
+                //convertendo o que precisa e populando os dados
                 pergunta.Numero = Convert.ToInt32(dataTable.Rows[i]["Numero"]);
                 pergunta.Questao = dataTable.Rows[i]["Pergunta"].ToString();
                 pergunta.AlternativaA = dataTable.Rows[i]["AlternativaA"].ToString();
@@ -82,6 +90,8 @@ namespace N2Quiz.controllers
                 pergunta.AlternativaC = dataTable.Rows[i]["AlternativaC"].ToString();
                 pergunta.AlternativaD = dataTable.Rows[i]["AlternativaD"].ToString();
                 pergunta.Resposta     = dataTable.Rows[i]["Resposta"].ToString();
+                
+                //adiciona a pergunta a lista de perguntas
                 ListaPerguntas.Add(pergunta);
             }
         }

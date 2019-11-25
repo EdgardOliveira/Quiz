@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.chartControl = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnGraficoBarras = new System.Windows.Forms.Button();
@@ -46,13 +47,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTituloTela = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.chartControl = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -64,6 +63,25 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1052, 391);
             this.panel4.TabIndex = 19;
+            // 
+            // chartControl
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartControl.ChartAreas.Add(chartArea1);
+            this.chartControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.chartControl.Legends.Add(legend1);
+            this.chartControl.Location = new System.Drawing.Point(0, 0);
+            this.chartControl.Name = "chartControl";
+            series1.ChartArea = "ChartArea1";
+            series1.Label = "#LABEL";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartControl.Series.Add(series1);
+            this.chartControl.Size = new System.Drawing.Size(1052, 391);
+            this.chartControl.TabIndex = 5;
+            this.chartControl.Text = "chartControl";
+            this.chartControl.Visible = false;
             // 
             // chart1
             // 
@@ -86,7 +104,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(63)))), ((int)(((byte)(80)))));
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btnGraficoBarras);
             this.panel2.Controls.Add(this.btnPergunta);
             this.panel2.Controls.Add(this.btnImportar);
@@ -110,7 +127,7 @@
             this.btnGraficoBarras.Name = "btnGraficoBarras";
             this.btnGraficoBarras.Size = new System.Drawing.Size(83, 80);
             this.btnGraficoBarras.TabIndex = 15;
-            this.btnGraficoBarras.Text = "Gráfico Barras";
+            this.btnGraficoBarras.Text = "Gráfico";
             this.btnGraficoBarras.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGraficoBarras.UseVisualStyleBackColor = true;
             this.btnGraficoBarras.Click += new System.EventHandler(this.btnGraficoBarras_Click);
@@ -214,34 +231,6 @@
             this.lblTituloTela.TabIndex = 9;
             this.lblTituloTela.Text = "Quiz N2";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(570, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // chartControl
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartControl.ChartAreas.Add(chartArea1);
-            this.chartControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartControl.Legends.Add(legend1);
-            this.chartControl.Location = new System.Drawing.Point(0, 0);
-            this.chartControl.Name = "chartControl";
-            series1.ChartArea = "ChartArea1";
-            series1.Label = "#LABEL";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartControl.Series.Add(series1);
-            this.chartControl.Size = new System.Drawing.Size(1052, 391);
-            this.chartControl.TabIndex = 5;
-            this.chartControl.Text = "chartControl";
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,11 +245,11 @@
             this.Text = "Quiz N2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,7 +268,6 @@
         private System.Windows.Forms.Label lblTituloTela;
         private System.Windows.Forms.Button btnPergunta;
         private System.Windows.Forms.Button btnGraficoBarras;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartControl;
     }
 }

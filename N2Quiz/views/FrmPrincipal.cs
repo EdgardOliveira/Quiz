@@ -81,7 +81,66 @@ namespace N2Quiz
             tela.Show();
         }
 
-        public void BarExample()
+        public void ExibirGraficoBarras()
+        {
+            int[] xJogadores = new int[3];// { 1, 2, 3 };
+            double[] yPontuacao = new double[3];// { 70, 100, 50 };
+            string[] jogadores = new string[3];
+
+            //definir o caminho do arquivo
+            string CaminhoCompleto = Path.Combine(Application.StartupPath, Globais.ARQ_RANKING);
+
+            //verificar se o arquivo existe
+            if (File.Exists(CaminhoCompleto))
+            {
+                //ler arquivo de ranking
+                Arquivo arquivo = new Arquivo();
+                DataTable dataTable = arquivo.Abrir(Application.StartupPath, Globais.ARQ_RANKING);
+
+                //ordenar pela pontuacao (maior para menor)
+                dataTable.DefaultView.Sort = "Pontuacao desc";
+                dataTable = dataTable.DefaultView.ToTable();
+
+                //pegar os 3 primeiros e atribuir aos vetores x e y
+                for (int i = 0; i < 3; i++)
+                {
+                    xJogadores[i] = i + 1;
+                    yPontuacao[i] = Convert.ToDouble(dataTable.Rows[i]["Pontuacao"]);
+                    jogadores[i] = dataTable.Rows[i]["Jogador"].ToString();
+                }
+
+                //Gráfico de Barras Vertical
+                //create another area and add it to the chart
+                ChartArea chartArea = new ChartArea("Ranking");
+                chart1.ChartAreas.Add(chartArea);
+
+                //Criando a série do eixo xy
+                Series series = new Series();
+                series.Points.DataBindXY(xJogadores, yPontuacao);
+                //Legend secondLegend = new Legend("Primeiro");
+
+                //chart1.Legends.Add("Testeeeee");
+
+                //chartArea.Series[0].Legend = "Primeiro";
+                //chartArea.Series[1].Legend = "Segundo";
+                //chartArea.Series[2].Legend = "Terceiro";
+
+                //Configura o tipo de gráfico, colunas; barras verticais
+                series.ChartType = SeriesChartType.Column;
+                series.ChartArea = "Ranking";
+
+                //Add the series to the chart
+                chart1.Series.Add(series);
+
+                chart1.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("O arquivo de ranking não foi encontrado em " + CaminhoCompleto, "Arquivo não existe", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        public void ExibirGraficoBarrasExemplo()
         {
 
             //Chart chartControl = new Chart();
@@ -115,67 +174,13 @@ namespace N2Quiz
 
         private void btnGraficoBarras_Click(object sender, EventArgs e)
         {
-
-            int[] xJogadores = new int[3];// { 1, 2, 3 };
-            double[] yPontuacao = new double[3];// { 70, 100, 50 };
-            string[] jogadores = new string[3];
-
-            //definir o caminho do arquivo
-            string CaminhoCompleto = Path.Combine(Application.StartupPath, Globais.ARQ_RANKING);
-            
-            //verificar se o arquivo existe
-            if (File.Exists(CaminhoCompleto))
-            {
-                //ler arquivo de ranking
-                Arquivo arquivo = new Arquivo();
-                DataTable dataTable = arquivo.Abrir(Application.StartupPath, Globais.ARQ_RANKING);
-
-                //ordenar pela pontuacao (maior para menor)
-                dataTable.DefaultView.Sort = "Pontuacao desc";
-                dataTable = dataTable.DefaultView.ToTable();
-
-                //pegar os 3 primeiros e atribuir aos vetores x e y
-                for (int i = 0; i < 3; i++)
-                {
-                    xJogadores[i] = i + 1;
-                    yPontuacao[i] = Convert.ToDouble(dataTable.Rows[i]["Pontuacao"]);
-                    jogadores[i] = dataTable.Rows[i]["Jogador"].ToString(); 
-                }
-
-                //Gráfico de Barras Vertical
-                //create another area and add it to the chart
-                ChartArea chartArea = new ChartArea("Ranking");
-                chart1.ChartAreas.Add(chartArea);
-
-                //Criando a série do eixo xy
-                Series series = new Series();
-                series.Points.DataBindXY(xJogadores, yPontuacao);
-                //Legend secondLegend = new Legend("Primeiro");
-                
-                //chart1.Legends.Add("Testeeeee");
-
-                //chartArea.Series[0].Legend = "Primeiro";
-                //chartArea.Series[1].Legend = "Segundo";
-                //chartArea.Series[2].Legend = "Terceiro";
-
-                //Configura o tipo de gráfico, colunas; barras verticais
-                series.ChartType = SeriesChartType.Column;
-                series.ChartArea = "Ranking";
-
-                //Add the series to the chart
-                chart1.Series.Add(series);
-
-                chart1.Visible = true;
-            }
-            else
-            {
-                MessageBox.Show("O arquivo de ranking não foi encontrado em " + CaminhoCompleto, "Arquivo não existe", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            ExibirGraficoBarras();
+            //ExibirGraficoBarrasExemplo();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            BarExample();
+            
         }
     }
 }

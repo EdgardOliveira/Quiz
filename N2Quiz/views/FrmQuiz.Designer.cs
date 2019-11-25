@@ -40,18 +40,17 @@
             this.btnAlternativaB = new System.Windows.Forms.Button();
             this.btnAlternativaA = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.lblAlternativaD = new System.Windows.Forms.Label();
+            this.txtbxAlternativaD = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.lblAlternativaC = new System.Windows.Forms.Label();
+            this.txtbxAlternativaC = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.lblAlternativaB = new System.Windows.Forms.Label();
+            this.txtbxAlternativaB = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lblAlternativaA = new System.Windows.Forms.Label();
+            this.txtbxAlternativaA = new System.Windows.Forms.TextBox();
             this.lblTempo = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.btnProximaQuestao = new System.Windows.Forms.Button();
             this.btnVerificarResposta = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblPercentualErros = new System.Windows.Forms.Label();
             this.lblPercentualAcerto = new System.Windows.Forms.Label();
             this.lblPontuacao = new System.Windows.Forms.Label();
             this.lblJogador = new System.Windows.Forms.Label();
@@ -86,9 +85,9 @@
             this.panelPergunta.BackColor = System.Drawing.SystemColors.Highlight;
             this.panelPergunta.Controls.Add(this.txtbxQuestao);
             this.panelPergunta.Controls.Add(this.lblNumeroQuestao);
-            this.panelPergunta.Location = new System.Drawing.Point(34, 16);
+            this.panelPergunta.Location = new System.Drawing.Point(6, 6);
             this.panelPergunta.Name = "panelPergunta";
-            this.panelPergunta.Size = new System.Drawing.Size(990, 78);
+            this.panelPergunta.Size = new System.Drawing.Size(1072, 103);
             this.panelPergunta.TabIndex = 0;
             // 
             // txtbxQuestao
@@ -100,10 +99,9 @@
             this.txtbxQuestao.Location = new System.Drawing.Point(105, 7);
             this.txtbxQuestao.Multiline = true;
             this.txtbxQuestao.Name = "txtbxQuestao";
-            this.txtbxQuestao.Size = new System.Drawing.Size(861, 62);
+            this.txtbxQuestao.Size = new System.Drawing.Size(958, 93);
             this.txtbxQuestao.TabIndex = 1;
-            this.txtbxQuestao.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
-    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.txtbxQuestao.Text = resources.GetString("txtbxQuestao.Text");
             // 
             // lblNumeroQuestao
             // 
@@ -128,19 +126,19 @@
             this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Location = new System.Drawing.Point(34, 94);
+            this.panel2.Location = new System.Drawing.Point(6, 112);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(589, 280);
+            this.panel2.Size = new System.Drawing.Size(814, 373);
             this.panel2.TabIndex = 2;
             // 
             // btnAlternativaD
             // 
             this.btnAlternativaD.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAlternativaD.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlternativaD.Font = new System.Drawing.Font("Arial Black", 32F, System.Drawing.FontStyle.Bold);
             this.btnAlternativaD.ForeColor = System.Drawing.Color.White;
-            this.btnAlternativaD.Location = new System.Drawing.Point(31, 210);
+            this.btnAlternativaD.Location = new System.Drawing.Point(9, 276);
             this.btnAlternativaD.Name = "btnAlternativaD";
-            this.btnAlternativaD.Size = new System.Drawing.Size(56, 46);
+            this.btnAlternativaD.Size = new System.Drawing.Size(85, 85);
             this.btnAlternativaD.TabIndex = 12;
             this.btnAlternativaD.Text = "D";
             this.btnAlternativaD.UseVisualStyleBackColor = false;
@@ -149,11 +147,11 @@
             // btnAlternativaC
             // 
             this.btnAlternativaC.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAlternativaC.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlternativaC.Font = new System.Drawing.Font("Arial Black", 32F, System.Drawing.FontStyle.Bold);
             this.btnAlternativaC.ForeColor = System.Drawing.Color.White;
-            this.btnAlternativaC.Location = new System.Drawing.Point(31, 148);
+            this.btnAlternativaC.Location = new System.Drawing.Point(9, 188);
             this.btnAlternativaC.Name = "btnAlternativaC";
-            this.btnAlternativaC.Size = new System.Drawing.Size(56, 46);
+            this.btnAlternativaC.Size = new System.Drawing.Size(85, 85);
             this.btnAlternativaC.TabIndex = 11;
             this.btnAlternativaC.Text = "C";
             this.btnAlternativaC.UseVisualStyleBackColor = false;
@@ -162,11 +160,11 @@
             // btnAlternativaB
             // 
             this.btnAlternativaB.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAlternativaB.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlternativaB.Font = new System.Drawing.Font("Arial Black", 32F, System.Drawing.FontStyle.Bold);
             this.btnAlternativaB.ForeColor = System.Drawing.Color.White;
-            this.btnAlternativaB.Location = new System.Drawing.Point(32, 86);
+            this.btnAlternativaB.Location = new System.Drawing.Point(9, 99);
             this.btnAlternativaB.Name = "btnAlternativaB";
-            this.btnAlternativaB.Size = new System.Drawing.Size(56, 46);
+            this.btnAlternativaB.Size = new System.Drawing.Size(85, 85);
             this.btnAlternativaB.TabIndex = 10;
             this.btnAlternativaB.Text = "B";
             this.btnAlternativaB.UseVisualStyleBackColor = false;
@@ -175,11 +173,11 @@
             // btnAlternativaA
             // 
             this.btnAlternativaA.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAlternativaA.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlternativaA.Font = new System.Drawing.Font("Arial Black", 32F, System.Drawing.FontStyle.Bold);
             this.btnAlternativaA.ForeColor = System.Drawing.Color.White;
-            this.btnAlternativaA.Location = new System.Drawing.Point(32, 24);
+            this.btnAlternativaA.Location = new System.Drawing.Point(9, 10);
             this.btnAlternativaA.Name = "btnAlternativaA";
-            this.btnAlternativaA.Size = new System.Drawing.Size(56, 46);
+            this.btnAlternativaA.Size = new System.Drawing.Size(85, 85);
             this.btnAlternativaA.TabIndex = 9;
             this.btnAlternativaA.Text = "A";
             this.btnAlternativaA.UseVisualStyleBackColor = false;
@@ -188,126 +186,130 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel9.Controls.Add(this.lblAlternativaD);
-            this.panel9.Location = new System.Drawing.Point(85, 210);
+            this.panel9.Controls.Add(this.txtbxAlternativaD);
+            this.panel9.Location = new System.Drawing.Point(90, 277);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(462, 46);
+            this.panel9.Size = new System.Drawing.Size(710, 83);
             this.panel9.TabIndex = 8;
             // 
-            // lblAlternativaD
+            // txtbxAlternativaD
             // 
-            this.lblAlternativaD.AutoSize = true;
-            this.lblAlternativaD.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlternativaD.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblAlternativaD.Location = new System.Drawing.Point(9, 10);
-            this.lblAlternativaD.Name = "lblAlternativaD";
-            this.lblAlternativaD.Size = new System.Drawing.Size(291, 29);
-            this.lblAlternativaD.TabIndex = 3;
-            this.lblAlternativaD.Text = "RESPOSTA DA LETRA D";
+            this.txtbxAlternativaD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtbxAlternativaD.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtbxAlternativaD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbxAlternativaD.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxAlternativaD.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtbxAlternativaD.Location = new System.Drawing.Point(7, 12);
+            this.txtbxAlternativaD.Multiline = true;
+            this.txtbxAlternativaD.Name = "txtbxAlternativaD";
+            this.txtbxAlternativaD.Size = new System.Drawing.Size(697, 58);
+            this.txtbxAlternativaD.TabIndex = 5;
+            this.txtbxAlternativaD.Text = "RESPOSTA DA LETRA D";
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel7.Controls.Add(this.lblAlternativaC);
-            this.panel7.Location = new System.Drawing.Point(85, 148);
+            this.panel7.Controls.Add(this.txtbxAlternativaC);
+            this.panel7.Location = new System.Drawing.Point(90, 189);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(462, 46);
+            this.panel7.Size = new System.Drawing.Size(710, 83);
             this.panel7.TabIndex = 6;
             // 
-            // lblAlternativaC
+            // txtbxAlternativaC
             // 
-            this.lblAlternativaC.AutoSize = true;
-            this.lblAlternativaC.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlternativaC.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblAlternativaC.Location = new System.Drawing.Point(9, 10);
-            this.lblAlternativaC.Name = "lblAlternativaC";
-            this.lblAlternativaC.Size = new System.Drawing.Size(291, 29);
-            this.lblAlternativaC.TabIndex = 3;
-            this.lblAlternativaC.Text = "RESPOSTA DA LETRA C";
+            this.txtbxAlternativaC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtbxAlternativaC.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtbxAlternativaC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbxAlternativaC.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxAlternativaC.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtbxAlternativaC.Location = new System.Drawing.Point(8, 13);
+            this.txtbxAlternativaC.Multiline = true;
+            this.txtbxAlternativaC.Name = "txtbxAlternativaC";
+            this.txtbxAlternativaC.Size = new System.Drawing.Size(697, 58);
+            this.txtbxAlternativaC.TabIndex = 4;
+            this.txtbxAlternativaC.Text = "RESPOSTA DA LETRA C";
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel5.Controls.Add(this.lblAlternativaB);
-            this.panel5.Location = new System.Drawing.Point(85, 86);
+            this.panel5.Controls.Add(this.txtbxAlternativaB);
+            this.panel5.Location = new System.Drawing.Point(90, 100);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(462, 46);
+            this.panel5.Size = new System.Drawing.Size(710, 83);
             this.panel5.TabIndex = 4;
             // 
-            // lblAlternativaB
+            // txtbxAlternativaB
             // 
-            this.lblAlternativaB.AutoSize = true;
-            this.lblAlternativaB.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlternativaB.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblAlternativaB.Location = new System.Drawing.Point(9, 10);
-            this.lblAlternativaB.Name = "lblAlternativaB";
-            this.lblAlternativaB.Size = new System.Drawing.Size(291, 29);
-            this.lblAlternativaB.TabIndex = 3;
-            this.lblAlternativaB.Text = "RESPOSTA DA LETRA B";
+            this.txtbxAlternativaB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtbxAlternativaB.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtbxAlternativaB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbxAlternativaB.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxAlternativaB.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtbxAlternativaB.Location = new System.Drawing.Point(8, 14);
+            this.txtbxAlternativaB.Multiline = true;
+            this.txtbxAlternativaB.Name = "txtbxAlternativaB";
+            this.txtbxAlternativaB.Size = new System.Drawing.Size(697, 58);
+            this.txtbxAlternativaB.TabIndex = 3;
+            this.txtbxAlternativaB.Text = "RESPOSTA DA LETRA B";
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel4.Controls.Add(this.lblAlternativaA);
-            this.panel4.Location = new System.Drawing.Point(85, 24);
+            this.panel4.Controls.Add(this.txtbxAlternativaA);
+            this.panel4.Location = new System.Drawing.Point(90, 11);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(462, 46);
+            this.panel4.Size = new System.Drawing.Size(710, 83);
             this.panel4.TabIndex = 2;
             // 
-            // lblAlternativaA
+            // txtbxAlternativaA
             // 
-            this.lblAlternativaA.AutoSize = true;
-            this.lblAlternativaA.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlternativaA.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblAlternativaA.Location = new System.Drawing.Point(9, 10);
-            this.lblAlternativaA.Name = "lblAlternativaA";
-            this.lblAlternativaA.Size = new System.Drawing.Size(290, 29);
-            this.lblAlternativaA.TabIndex = 2;
-            this.lblAlternativaA.Text = "RESPOSTA DA LETRA A";
+            this.txtbxAlternativaA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtbxAlternativaA.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtbxAlternativaA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbxAlternativaA.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxAlternativaA.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtbxAlternativaA.Location = new System.Drawing.Point(6, 15);
+            this.txtbxAlternativaA.Multiline = true;
+            this.txtbxAlternativaA.Name = "txtbxAlternativaA";
+            this.txtbxAlternativaA.Size = new System.Drawing.Size(697, 58);
+            this.txtbxAlternativaA.TabIndex = 2;
+            this.txtbxAlternativaA.Text = "RESPOSTA DA LETRA A";
             // 
             // lblTempo
             // 
             this.lblTempo.AutoSize = true;
             this.lblTempo.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTempo.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblTempo.Location = new System.Drawing.Point(740, 7);
+            this.lblTempo.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblTempo.Location = new System.Drawing.Point(877, 10);
             this.lblTempo.Name = "lblTempo";
-            this.lblTempo.Size = new System.Drawing.Size(290, 111);
+            this.lblTempo.Size = new System.Drawing.Size(153, 111);
             this.lblTempo.TabIndex = 3;
-            this.lblTempo.Text = "00:30";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(34, 375);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(590, 4);
-            this.progressBar1.TabIndex = 0;
-            // 
-            // btnProximaQuestao
-            // 
-            this.btnProximaQuestao.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProximaQuestao.Location = new System.Drawing.Point(473, 385);
-            this.btnProximaQuestao.Name = "btnProximaQuestao";
-            this.btnProximaQuestao.Size = new System.Drawing.Size(150, 70);
-            this.btnProximaQuestao.TabIndex = 4;
-            this.btnProximaQuestao.Text = "Próxima Questão";
-            this.btnProximaQuestao.UseVisualStyleBackColor = true;
-            this.btnProximaQuestao.Visible = false;
+            this.lblTempo.Text = "30";
+            this.lblTempo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnVerificarResposta
             // 
             this.btnVerificarResposta.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerificarResposta.Location = new System.Drawing.Point(317, 385);
+            this.btnVerificarResposta.Location = new System.Drawing.Point(572, 492);
             this.btnVerificarResposta.Name = "btnVerificarResposta";
-            this.btnVerificarResposta.Size = new System.Drawing.Size(150, 70);
+            this.btnVerificarResposta.Size = new System.Drawing.Size(248, 46);
             this.btnVerificarResposta.TabIndex = 5;
-            this.btnVerificarResposta.Text = "Verificar";
+            this.btnVerificarResposta.Text = "Verificar Resposta";
             this.btnVerificarResposta.UseVisualStyleBackColor = true;
             this.btnVerificarResposta.Click += new System.EventHandler(this.btnVerificarResposta_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(39)))));
+            this.panel1.Controls.Add(this.lblPercentualErros);
             this.panel1.Controls.Add(this.lblPercentualAcerto);
             this.panel1.Controls.Add(this.lblPontuacao);
             this.panel1.Controls.Add(this.lblJogador);
@@ -317,15 +319,28 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1306, 121);
+            this.panel1.Size = new System.Drawing.Size(1324, 121);
             this.panel1.TabIndex = 7;
+            // 
+            // lblPercentualErros
+            // 
+            this.lblPercentualErros.AutoSize = true;
+            this.lblPercentualErros.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPercentualErros.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblPercentualErros.Location = new System.Drawing.Point(546, 49);
+            this.lblPercentualErros.Name = "lblPercentualErros";
+            this.lblPercentualErros.Size = new System.Drawing.Size(196, 39);
+            this.lblPercentualErros.TabIndex = 10;
+            this.lblPercentualErros.Text = "Erros: XX,X%";
+            this.lblPercentualErros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPercentualErros.Visible = false;
             // 
             // lblPercentualAcerto
             // 
             this.lblPercentualAcerto.AutoSize = true;
             this.lblPercentualAcerto.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPercentualAcerto.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblPercentualAcerto.Location = new System.Drawing.Point(270, 48);
+            this.lblPercentualAcerto.Location = new System.Drawing.Point(199, 49);
             this.lblPercentualAcerto.Name = "lblPercentualAcerto";
             this.lblPercentualAcerto.Size = new System.Drawing.Size(244, 39);
             this.lblPercentualAcerto.TabIndex = 8;
@@ -337,7 +352,7 @@
             this.lblPontuacao.AutoSize = true;
             this.lblPontuacao.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPontuacao.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblPontuacao.Location = new System.Drawing.Point(270, 9);
+            this.lblPontuacao.Location = new System.Drawing.Point(199, 10);
             this.lblPontuacao.Name = "lblPontuacao";
             this.lblPontuacao.Size = new System.Drawing.Size(281, 39);
             this.lblPontuacao.TabIndex = 7;
@@ -362,7 +377,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1036, 21);
+            this.button1.Location = new System.Drawing.Point(1054, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(270, 100);
             this.button1.TabIndex = 5;
@@ -386,7 +401,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 121);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1306, 44);
+            this.panel3.Size = new System.Drawing.Size(1324, 44);
             this.panel3.TabIndex = 9;
             // 
             // lblDados
@@ -406,22 +421,23 @@
             this.panel8.Controls.Add(this.pnlResultado);
             this.panel8.Controls.Add(this.btnVerificarResposta);
             this.panel8.Controls.Add(this.panelPergunta);
-            this.panel8.Controls.Add(this.btnProximaQuestao);
             this.panel8.Controls.Add(this.panel2);
-            this.panel8.Controls.Add(this.progressBar1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(243, 165);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1063, 459);
+            this.panel8.Size = new System.Drawing.Size(1081, 550);
             this.panel8.TabIndex = 19;
             // 
             // pnlResultado
             // 
+            this.pnlResultado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlResultado.BackgroundImage = global::N2Quiz.Properties.Resources.erroufeioerrourude;
             this.pnlResultado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlResultado.Location = new System.Drawing.Point(630, 100);
+            this.pnlResultado.Location = new System.Drawing.Point(826, 112);
             this.pnlResultado.Name = "pnlResultado";
-            this.pnlResultado.Size = new System.Drawing.Size(394, 350);
+            this.pnlResultado.Size = new System.Drawing.Size(252, 426);
             this.pnlResultado.TabIndex = 6;
             // 
             // panel6
@@ -431,7 +447,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 165);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(243, 459);
+            this.panel6.Size = new System.Drawing.Size(243, 550);
             this.panel6.TabIndex = 18;
             // 
             // FrmQuiz
@@ -439,7 +455,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(1306, 624);
+            this.ClientSize = new System.Drawing.Size(1324, 715);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
@@ -448,7 +464,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quiz";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Activated += new System.EventHandler(this.FrmQuiz_Activated);
             this.Shown += new System.EventHandler(this.FrmQuiz_Shown);
             this.panelPergunta.ResumeLayout(false);
             this.panelPergunta.PerformLayout();
@@ -480,18 +495,12 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblTempo;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.TextBox txtbxQuestao;
         private System.Windows.Forms.Label lblNumeroQuestao;
         private System.Windows.Forms.Button btnAlternativaD;
         private System.Windows.Forms.Button btnAlternativaC;
         private System.Windows.Forms.Button btnAlternativaB;
         private System.Windows.Forms.Button btnAlternativaA;
-        private System.Windows.Forms.Label lblAlternativaD;
-        private System.Windows.Forms.Label lblAlternativaC;
-        private System.Windows.Forms.Label lblAlternativaB;
-        private System.Windows.Forms.Label lblAlternativaA;
-        private System.Windows.Forms.Button btnProximaQuestao;
         private System.Windows.Forms.Button btnVerificarResposta;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
@@ -504,5 +513,10 @@
         private System.Windows.Forms.Label lblPercentualAcerto;
         private System.Windows.Forms.Label lblPontuacao;
         private System.Windows.Forms.Label lblJogador;
+        private System.Windows.Forms.Label lblPercentualErros;
+        private System.Windows.Forms.TextBox txtbxAlternativaC;
+        private System.Windows.Forms.TextBox txtbxAlternativaB;
+        private System.Windows.Forms.TextBox txtbxAlternativaA;
+        private System.Windows.Forms.TextBox txtbxAlternativaD;
     }
 }

@@ -142,5 +142,19 @@ namespace N2Quiz
         {
             this.Dispose();
         }
+
+        private void txtbxPergunta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                e.Handled = true;
+                SendKeys.Send("{tab}");
+            }
+        }
+
+        private void FrmPergunta_Shown(object sender, EventArgs e)
+        {
+            txtbxPergunta.Focus();
+        }
     }
 }
