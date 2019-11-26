@@ -125,6 +125,7 @@
             // 
             this.txtbxNome.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxNome.Location = new System.Drawing.Point(48, 43);
+            this.txtbxNome.MaxLength = 22;
             this.txtbxNome.Name = "txtbxNome";
             this.txtbxNome.Size = new System.Drawing.Size(464, 29);
             this.txtbxNome.TabIndex = 4;

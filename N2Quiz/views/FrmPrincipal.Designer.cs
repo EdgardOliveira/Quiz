@@ -59,9 +59,9 @@
             this.panel4.Controls.Add(this.chartControl);
             this.panel4.Controls.Add(this.chart1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(249, 260);
+            this.panel4.Location = new System.Drawing.Point(490, 260);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1052, 391);
+            this.panel4.Size = new System.Drawing.Size(811, 391);
             this.panel4.TabIndex = 19;
             // 
             // chartControl
@@ -78,7 +78,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartControl.Series.Add(series1);
-            this.chartControl.Size = new System.Drawing.Size(1052, 391);
+            this.chartControl.Size = new System.Drawing.Size(811, 391);
             this.chartControl.TabIndex = 5;
             this.chartControl.Text = "chartControl";
             this.chartControl.Visible = false;
@@ -96,7 +96,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(1052, 391);
+            this.chart1.Size = new System.Drawing.Size(811, 391);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
             this.chart1.Visible = false;
@@ -207,7 +207,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 260);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(249, 391);
+            this.panel1.Size = new System.Drawing.Size(490, 391);
             this.panel1.TabIndex = 17;
             // 
             // panel3

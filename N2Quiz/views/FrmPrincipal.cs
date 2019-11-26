@@ -1,7 +1,6 @@
 ﻿using N2Quiz.controllers;
 using System;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -101,38 +100,45 @@ namespace N2Quiz
                 dataTable.DefaultView.Sort = "Pontuacao desc";
                 dataTable = dataTable.DefaultView.ToTable();
 
-                //pegar os 3 primeiros e atribuir aos vetores x e y
-                for (int i = 0; i < 3; i++)
+                if (dataTable.Rows.Count > 2)
                 {
-                    xJogadores[i] = i + 1;
-                    yPontuacao[i] = Convert.ToDouble(dataTable.Rows[i]["Pontuacao"]);
-                    jogadores[i] = dataTable.Rows[i]["Jogador"].ToString();
+                    //pegar os 3 primeiros e atribuir aos vetores x e y
+                    for (int i = 0; i < 3; i++)
+                    {
+                        xJogadores[i] = i + 1;
+                        yPontuacao[i] = Convert.ToDouble(dataTable.Rows[i]["Pontuacao"]);
+                        jogadores[i] = dataTable.Rows[i]["Jogador"].ToString();
+                    }
+
+                    //Gráfico de Barras Vertical
+                    //create another area and add it to the chart
+                    ChartArea chartArea = new ChartArea("Ranking");
+                    chart1.ChartAreas.Add(chartArea);
+
+                    //Criando a série do eixo xy
+                    Series series = new Series();
+                    series.Points.DataBindXY(xJogadores, yPontuacao);
+                    //Legend secondLegend = new Legend("Primeiro");
+
+                    //chart1.Legends.Add("Testeeeee");
+
+                    //chartArea.Series[0].Legend = "Primeiro";
+                    //chartArea.Series[1].Legend = "Segundo";
+                    //chartArea.Series[2].Legend = "Terceiro";
+
+                    //Configura o tipo de gráfico, colunas; barras verticais
+                    series.ChartType = SeriesChartType.Column;
+                    series.ChartArea = "Ranking";
+
+                    //Add the series to the chart
+                    chart1.Series.Add(series);
+
+                    chart1.Visible = true;
                 }
-
-                //Gráfico de Barras Vertical
-                //create another area and add it to the chart
-                ChartArea chartArea = new ChartArea("Ranking");
-                chart1.ChartAreas.Add(chartArea);
-
-                //Criando a série do eixo xy
-                Series series = new Series();
-                series.Points.DataBindXY(xJogadores, yPontuacao);
-                //Legend secondLegend = new Legend("Primeiro");
-
-                //chart1.Legends.Add("Testeeeee");
-
-                //chartArea.Series[0].Legend = "Primeiro";
-                //chartArea.Series[1].Legend = "Segundo";
-                //chartArea.Series[2].Legend = "Terceiro";
-
-                //Configura o tipo de gráfico, colunas; barras verticais
-                series.ChartType = SeriesChartType.Column;
-                series.ChartArea = "Ranking";
-
-                //Add the series to the chart
-                chart1.Series.Add(series);
-
-                chart1.Visible = true;
+                else
+                {
+                    MessageBox.Show("Tem que haver pelo menos 3 jogadores no arquivo de ranking", "Ranking Insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
@@ -176,11 +182,6 @@ namespace N2Quiz
         {
             ExibirGraficoBarras();
             //ExibirGraficoBarrasExemplo();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

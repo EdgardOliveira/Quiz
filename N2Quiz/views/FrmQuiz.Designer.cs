@@ -39,13 +39,13 @@
             this.btnAlternativaC = new System.Windows.Forms.Button();
             this.btnAlternativaB = new System.Windows.Forms.Button();
             this.btnAlternativaA = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.pnlAlternativaD = new System.Windows.Forms.Panel();
             this.txtbxAlternativaD = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.pnlAlternativaC = new System.Windows.Forms.Panel();
             this.txtbxAlternativaC = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnlAlternativaB = new System.Windows.Forms.Panel();
             this.txtbxAlternativaB = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnlAlternativaA = new System.Windows.Forms.Panel();
             this.txtbxAlternativaA = new System.Windows.Forms.TextBox();
             this.lblTempo = new System.Windows.Forms.Label();
             this.btnVerificarResposta = new System.Windows.Forms.Button();
@@ -63,10 +63,10 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelPergunta.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.pnlAlternativaD.SuspendLayout();
+            this.pnlAlternativaC.SuspendLayout();
+            this.pnlAlternativaB.SuspendLayout();
+            this.pnlAlternativaA.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -85,9 +85,9 @@
             this.panelPergunta.BackColor = System.Drawing.SystemColors.Highlight;
             this.panelPergunta.Controls.Add(this.txtbxQuestao);
             this.panelPergunta.Controls.Add(this.lblNumeroQuestao);
-            this.panelPergunta.Location = new System.Drawing.Point(6, 6);
+            this.panelPergunta.Location = new System.Drawing.Point(1, 1);
             this.panelPergunta.Name = "panelPergunta";
-            this.panelPergunta.Size = new System.Drawing.Size(1072, 103);
+            this.panelPergunta.Size = new System.Drawing.Size(978, 103);
             this.panelPergunta.TabIndex = 0;
             // 
             // txtbxQuestao
@@ -122,13 +122,13 @@
             this.panel2.Controls.Add(this.btnAlternativaC);
             this.panel2.Controls.Add(this.btnAlternativaB);
             this.panel2.Controls.Add(this.btnAlternativaA);
-            this.panel2.Controls.Add(this.panel9);
-            this.panel2.Controls.Add(this.panel7);
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Location = new System.Drawing.Point(6, 112);
+            this.panel2.Controls.Add(this.pnlAlternativaD);
+            this.panel2.Controls.Add(this.pnlAlternativaC);
+            this.panel2.Controls.Add(this.pnlAlternativaB);
+            this.panel2.Controls.Add(this.pnlAlternativaA);
+            this.panel2.Location = new System.Drawing.Point(1, 105);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(814, 373);
+            this.panel2.Size = new System.Drawing.Size(727, 373);
             this.panel2.TabIndex = 2;
             // 
             // btnAlternativaD
@@ -183,14 +183,14 @@
             this.btnAlternativaA.UseVisualStyleBackColor = false;
             this.btnAlternativaA.Click += new System.EventHandler(this.btnAlternativaA_Click);
             // 
-            // panel9
+            // pnlAlternativaD
             // 
-            this.panel9.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel9.Controls.Add(this.txtbxAlternativaD);
-            this.panel9.Location = new System.Drawing.Point(90, 277);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(710, 83);
-            this.panel9.TabIndex = 8;
+            this.pnlAlternativaD.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pnlAlternativaD.Controls.Add(this.txtbxAlternativaD);
+            this.pnlAlternativaD.Location = new System.Drawing.Point(90, 277);
+            this.pnlAlternativaD.Name = "pnlAlternativaD";
+            this.pnlAlternativaD.Size = new System.Drawing.Size(624, 83);
+            this.pnlAlternativaD.TabIndex = 8;
             // 
             // txtbxAlternativaD
             // 
@@ -204,18 +204,18 @@
             this.txtbxAlternativaD.Location = new System.Drawing.Point(7, 12);
             this.txtbxAlternativaD.Multiline = true;
             this.txtbxAlternativaD.Name = "txtbxAlternativaD";
-            this.txtbxAlternativaD.Size = new System.Drawing.Size(697, 58);
+            this.txtbxAlternativaD.Size = new System.Drawing.Size(611, 58);
             this.txtbxAlternativaD.TabIndex = 5;
             this.txtbxAlternativaD.Text = "RESPOSTA DA LETRA D";
             // 
-            // panel7
+            // pnlAlternativaC
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel7.Controls.Add(this.txtbxAlternativaC);
-            this.panel7.Location = new System.Drawing.Point(90, 189);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(710, 83);
-            this.panel7.TabIndex = 6;
+            this.pnlAlternativaC.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pnlAlternativaC.Controls.Add(this.txtbxAlternativaC);
+            this.pnlAlternativaC.Location = new System.Drawing.Point(90, 189);
+            this.pnlAlternativaC.Name = "pnlAlternativaC";
+            this.pnlAlternativaC.Size = new System.Drawing.Size(624, 83);
+            this.pnlAlternativaC.TabIndex = 6;
             // 
             // txtbxAlternativaC
             // 
@@ -229,18 +229,18 @@
             this.txtbxAlternativaC.Location = new System.Drawing.Point(8, 13);
             this.txtbxAlternativaC.Multiline = true;
             this.txtbxAlternativaC.Name = "txtbxAlternativaC";
-            this.txtbxAlternativaC.Size = new System.Drawing.Size(697, 58);
+            this.txtbxAlternativaC.Size = new System.Drawing.Size(613, 58);
             this.txtbxAlternativaC.TabIndex = 4;
             this.txtbxAlternativaC.Text = "RESPOSTA DA LETRA C";
             // 
-            // panel5
+            // pnlAlternativaB
             // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel5.Controls.Add(this.txtbxAlternativaB);
-            this.panel5.Location = new System.Drawing.Point(90, 100);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(710, 83);
-            this.panel5.TabIndex = 4;
+            this.pnlAlternativaB.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pnlAlternativaB.Controls.Add(this.txtbxAlternativaB);
+            this.pnlAlternativaB.Location = new System.Drawing.Point(90, 100);
+            this.pnlAlternativaB.Name = "pnlAlternativaB";
+            this.pnlAlternativaB.Size = new System.Drawing.Size(624, 83);
+            this.pnlAlternativaB.TabIndex = 4;
             // 
             // txtbxAlternativaB
             // 
@@ -254,18 +254,18 @@
             this.txtbxAlternativaB.Location = new System.Drawing.Point(8, 14);
             this.txtbxAlternativaB.Multiline = true;
             this.txtbxAlternativaB.Name = "txtbxAlternativaB";
-            this.txtbxAlternativaB.Size = new System.Drawing.Size(697, 58);
+            this.txtbxAlternativaB.Size = new System.Drawing.Size(613, 58);
             this.txtbxAlternativaB.TabIndex = 3;
             this.txtbxAlternativaB.Text = "RESPOSTA DA LETRA B";
             // 
-            // panel4
+            // pnlAlternativaA
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel4.Controls.Add(this.txtbxAlternativaA);
-            this.panel4.Location = new System.Drawing.Point(90, 11);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(710, 83);
-            this.panel4.TabIndex = 2;
+            this.pnlAlternativaA.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlAlternativaA.Controls.Add(this.txtbxAlternativaA);
+            this.pnlAlternativaA.Location = new System.Drawing.Point(90, 11);
+            this.pnlAlternativaA.Name = "pnlAlternativaA";
+            this.pnlAlternativaA.Size = new System.Drawing.Size(624, 83);
+            this.pnlAlternativaA.TabIndex = 2;
             // 
             // txtbxAlternativaA
             // 
@@ -279,7 +279,7 @@
             this.txtbxAlternativaA.Location = new System.Drawing.Point(6, 15);
             this.txtbxAlternativaA.Multiline = true;
             this.txtbxAlternativaA.Name = "txtbxAlternativaA";
-            this.txtbxAlternativaA.Size = new System.Drawing.Size(697, 58);
+            this.txtbxAlternativaA.Size = new System.Drawing.Size(615, 58);
             this.txtbxAlternativaA.TabIndex = 2;
             this.txtbxAlternativaA.Text = "RESPOSTA DA LETRA A";
             // 
@@ -298,7 +298,7 @@
             // btnVerificarResposta
             // 
             this.btnVerificarResposta.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerificarResposta.Location = new System.Drawing.Point(572, 492);
+            this.btnVerificarResposta.Location = new System.Drawing.Point(480, 486);
             this.btnVerificarResposta.Name = "btnVerificarResposta";
             this.btnVerificarResposta.Size = new System.Drawing.Size(248, 46);
             this.btnVerificarResposta.TabIndex = 5;
@@ -423,9 +423,9 @@
             this.panel8.Controls.Add(this.panelPergunta);
             this.panel8.Controls.Add(this.panel2);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(243, 165);
+            this.panel8.Location = new System.Drawing.Point(337, 165);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1081, 550);
+            this.panel8.Size = new System.Drawing.Size(987, 550);
             this.panel8.TabIndex = 19;
             // 
             // pnlResultado
@@ -435,9 +435,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlResultado.BackgroundImage = global::N2Quiz.Properties.Resources.erroufeioerrourude;
             this.pnlResultado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlResultado.Location = new System.Drawing.Point(826, 112);
+            this.pnlResultado.Location = new System.Drawing.Point(734, 105);
             this.pnlResultado.Name = "pnlResultado";
-            this.pnlResultado.Size = new System.Drawing.Size(252, 426);
+            this.pnlResultado.Size = new System.Drawing.Size(245, 426);
             this.pnlResultado.TabIndex = 6;
             // 
             // panel6
@@ -447,7 +447,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 165);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(243, 550);
+            this.panel6.Size = new System.Drawing.Size(337, 550);
             this.panel6.TabIndex = 18;
             // 
             // FrmQuiz
@@ -468,14 +468,14 @@
             this.panelPergunta.ResumeLayout(false);
             this.panelPergunta.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.pnlAlternativaD.ResumeLayout(false);
+            this.pnlAlternativaD.PerformLayout();
+            this.pnlAlternativaC.ResumeLayout(false);
+            this.pnlAlternativaC.PerformLayout();
+            this.pnlAlternativaB.ResumeLayout(false);
+            this.pnlAlternativaB.PerformLayout();
+            this.pnlAlternativaA.ResumeLayout(false);
+            this.pnlAlternativaA.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -490,10 +490,10 @@
         private System.Windows.Forms.Timer tmrQuiz;
         private System.Windows.Forms.Panel panelPergunta;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnlAlternativaD;
+        private System.Windows.Forms.Panel pnlAlternativaC;
+        private System.Windows.Forms.Panel pnlAlternativaB;
+        private System.Windows.Forms.Panel pnlAlternativaA;
         private System.Windows.Forms.Label lblTempo;
         private System.Windows.Forms.TextBox txtbxQuestao;
         private System.Windows.Forms.Label lblNumeroQuestao;

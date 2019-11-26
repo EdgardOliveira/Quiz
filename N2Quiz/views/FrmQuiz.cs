@@ -22,7 +22,9 @@ namespace N2Quiz
 
         public bool Proxima { get; private set; }
 
-        const int TEMPO = 11;
+
+        const int TEMPO = 31;
+        const int TEMPO_VER_RESP = 5000; //em milisegundo por causa da thread
 
 
         /// <summary>
@@ -55,6 +57,47 @@ namespace N2Quiz
             pergunta.Tempo = TEMPO;
         }
 
+        private void AtivarDesativarBotoes(int comando)
+        {
+            //HabilitarClickMouse = comando == 1 ? true : false;
+
+            switch (comando)
+            {
+                case 0:
+                    {
+                        //btnPrevinir.Visible = true;
+                        btnVerificarResposta.Enabled = false;
+                        btnAlternativaA.Enabled = false;
+                        btnAlternativaB.Enabled = false;
+                        btnAlternativaC.Enabled = false;
+                        btnAlternativaD.Enabled = false;
+
+                        /**btnVerificarResposta.Click -= btnVerificarResposta_Click;
+                        btnAlternativaA.Click -= btnAlternativaA_Click;
+                        btnAlternativaB.Click -= btnAlternativaB_Click;
+                        btnAlternativaC.Click -= btnAlternativaC_Click;
+                        btnAlternativaD.Click -= btnAlternativaD_Click;**/
+                        break;
+                    }
+                case 1:
+                    {
+                        //btnPrevinir.Visible = false;
+                        btnVerificarResposta.Enabled = true;
+                        btnAlternativaA.Enabled = true;
+                        btnAlternativaB.Enabled = true;
+                        btnAlternativaC.Enabled = true;
+                        btnAlternativaD.Enabled = true;
+                        /**btnVerificarResposta.Click += btnVerificarResposta_Click;
+                        btnAlternativaA.Click += btnAlternativaA_Click;
+                        btnAlternativaB.Click += btnAlternativaB_Click;
+                        btnAlternativaC.Click += btnAlternativaC_Click;
+                        btnAlternativaD.Click += btnAlternativaD_Click;**/
+                        break;
+                    }
+            }
+
+        }
+
         /// <summary>
         /// Método responsável por fazer a verificação da resposta do usuário
         /// </summary>
@@ -62,45 +105,101 @@ namespace N2Quiz
         /// <param name="e"></param>
         private void btnVerificarResposta_Click(object sender, EventArgs e)
         {
-            DateTime dt = Convert.ToDateTime("00:00:" + lblTempo.Text);
-            int segundos = dt.Second;
-
-            if (pergunta.VerificarResposta(segundos, AlternativaSelecionada))
+            if (!String.IsNullOrEmpty(AlternativaSelecionada) && pergunta.Tempo > 0)
             {
-                //resposta correta... exibe imagem
-                pnlResultado.BackgroundImage = Properties.Resources.acertomizeravi;
-                Application.DoEvents();
+                AtivarDesativarBotoes(0);
 
-                //incrementa a quantidade de questoes que o jogador acertou
-                jogador.Acertos++;
+                DateTime dt = Convert.ToDateTime("00:00:" + lblTempo.Text);
+                int segundos = dt.Second;
 
-                //incrementa a pontuação do jogador (%)
-                jogador.PercAcertos = CalcularPercentual(jogador.Acertos, pergunta.Numero);
-                jogador.PercErros = CalcularPercentual(jogador.Erros, pergunta.Numero);
-
-                ValidarProximaSalvar();
-            }
-            else
-            {
-                //resposta incorreta... exibe a imagem
-                pnlResultado.BackgroundImage = Properties.Resources.errou;
-                Application.DoEvents();
-
-                //incrementa o erro
-                jogador.Erros++;
-                jogador.PercErros = CalcularPercentual(jogador.Erros, pergunta.Numero);
-
-                //incrimenta a pontuação do jogador (%)
-                if (jogador.Acertos > 0)
+                if (pergunta.VerificarResposta(segundos, AlternativaSelecionada))
                 {
-                    jogador.PercAcertos = CalcularPercentual(jogador.Acertos, pergunta.Numero);
-                    jogador.PercErros = CalcularPercentual(jogador.Erros, pergunta.Numero);
+                    //resposta correta... exibe imagem
+                    pnlResultado.BackgroundImage = Properties.Resources.acertomizeravi;
+                    AtualizarRespostaCerta();
+                    Application.DoEvents();
+
+                    //incrementa a quantidade de questoes que o jogador acertou
+                    jogador.Acertos++;
+
+                    AtualizarEstatisticasJogador();
+
+                    ValidarProximaSalvar();
                 }
                 else
-                    jogador.PercAcertos = 0;
+                {
+                    //resposta incorreta... exibe a imagem
+                    pnlResultado.BackgroundImage = Properties.Resources.errou;
+                    AtualizarRespostaCerta();
+                    Application.DoEvents();
 
-                ValidarProximaSalvar();
-            }                
+                    //incrementa o erro
+                    jogador.Erros++;
+
+                    AtualizarEstatisticasJogador();
+
+                    //incrimenta a pontuação do jogador (%)
+                    if (jogador.Acertos > 0)
+                    {
+                        AtualizarEstatisticasJogador();
+                    }
+                    else
+                        jogador.PercAcertos = 0;
+
+                    ValidarProximaSalvar();
+                }
+
+                AtivarDesativarBotoes(1);
+            }
+            else
+                        {
+                MessageBox.Show("Você tem tempo, mas não selecionou uma resposta!",  "Escolha uma alternativa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+        }
+
+        private void AtualizarRespostaCerta()
+        {
+            if (pergunta.Resposta.Equals("A"))
+            {
+                pnlAlternativaA.BackColor = Color.GreenYellow;
+                pnlAlternativaB.BackColor = Color.WhiteSmoke;
+                pnlAlternativaC.BackColor = Color.WhiteSmoke;
+                pnlAlternativaD.BackColor = Color.WhiteSmoke;
+            }
+            else if (pergunta.Resposta.Equals("B"))
+            {
+                pnlAlternativaA.BackColor = Color.WhiteSmoke;
+                pnlAlternativaB.BackColor = Color.GreenYellow;
+                pnlAlternativaC.BackColor = Color.WhiteSmoke;
+                pnlAlternativaD.BackColor = Color.WhiteSmoke;
+            }
+            else if (pergunta.Resposta.Equals("C"))
+            {
+                pnlAlternativaA.BackColor = Color.WhiteSmoke;
+                pnlAlternativaB.BackColor = Color.WhiteSmoke;
+                pnlAlternativaC.BackColor = Color.GreenYellow; 
+                pnlAlternativaD.BackColor = Color.WhiteSmoke;
+            }
+            else if (pergunta.Resposta.Equals("D"))
+            {
+                pnlAlternativaA.BackColor = Color.WhiteSmoke;
+                pnlAlternativaB.BackColor = Color.WhiteSmoke;
+                pnlAlternativaC.BackColor = Color.WhiteSmoke;
+                pnlAlternativaD.BackColor = Color.GreenYellow; 
+            }
+            txtbxAlternativaA.BackColor = pnlAlternativaA.BackColor;
+            txtbxAlternativaB.BackColor = pnlAlternativaB.BackColor;
+            txtbxAlternativaC.BackColor = pnlAlternativaC.BackColor;
+            txtbxAlternativaD.BackColor = pnlAlternativaD.BackColor;
+        }
+
+        private void AtualizarEstatisticasJogador()
+        {
+            //atualiza o percentual de acertos
+            jogador.PercAcertos = CalcularPercentual(jogador.Acertos, pergunta.Numero);
+            //atualiza o percentual de erros
+            jogador.PercErros = CalcularPercentual(jogador.Erros, pergunta.Numero);
         }
 
         /// <summary>
@@ -215,7 +314,6 @@ namespace N2Quiz
 
             if (TempoExpirado && !Respondeu)
             {
-
                 Status = true;  //Expirou e ele não respondeu
 
                 Console.WriteLine("Expirou sem resposta...");
@@ -252,6 +350,36 @@ namespace N2Quiz
             Proxima = VerificarProxima();
 
             VerificarSeExpirouSemResposta();
+
+
+
+            Console.WriteLine(
+                "Alternativa selecionada: " + AlternativaSelecionada +
+                "\nTempo: " + pergunta.Tempo
+            );
+
+            if (!String.IsNullOrEmpty(AlternativaSelecionada) && (pergunta.Tempo <= 0))
+            {
+                //resposta incorreta... exibe a imagem
+                pnlResultado.BackgroundImage = Properties.Resources.errou;
+                AtualizarRespostaCerta();
+                Application.DoEvents();
+
+                //incrementa o erro
+                jogador.Erros++;
+
+                AtualizarEstatisticasJogador();
+
+                //incrimenta a pontuação do jogador (%)
+                if (jogador.Acertos > 0)
+                {
+                    AtualizarEstatisticasJogador();
+                }
+                else
+                    jogador.PercAcertos = 0;
+
+                ValidarProximaSalvar();
+            }
         }
 
         /// <summary>
@@ -260,8 +388,8 @@ namespace N2Quiz
         private void ChamarProximaQuestao()
         {
             Console.WriteLine("Esperando 2segundos...");
-            //aguarda 3 segundos para permitir a exibição da imagem
-            Thread.Sleep(3000);     // 3segundos
+            //aguarda alguns segundos pre-definidos na constatne para permitir a exibição da imagem e resposta
+            Thread.Sleep(TEMPO_VER_RESP);     
             //Application.DoEvents();
 
             Console.WriteLine("Iniciando o carregamento da próxima questão...");
@@ -297,7 +425,7 @@ namespace N2Quiz
             Arquivo arquivo = new Arquivo();
             arquivo.SalvarRanking(jogador, Application.StartupPath, Globais.ARQ_RANKING);
 
-
+            //para o timer para não ficar chamando a toda o hora o fim do jogo
             tmrQuiz.Stop();
 
             MessageBox.Show("Fim de jogo.", "FIM", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -433,20 +561,24 @@ namespace N2Quiz
             txtbxAlternativaA.Text = pergunta.AlternativaA.ToUpper();
             txtbxAlternativaB.Text = pergunta.AlternativaB.ToUpper();
             txtbxAlternativaC.Text = pergunta.AlternativaC.ToUpper();
-            txtbxAlternativaD.Text = pergunta.AlternativaD.ToUpper();           
-
+            txtbxAlternativaD.Text = pergunta.AlternativaD.ToUpper();
             pnlResultado.BackgroundImage = null;
             lblJogador.Text = "Jogador: " + jogador.Nome.ToUpper();
             lblPontuacao.Text = "Pontuação: " + jogador.Acertos.ToString() + "pts";
             lblPercentualAcerto.Text = "Acertos: " + jogador.PercAcertos.ToString("0.00") + "%";
             lblPercentualErros.Text = "Erros: " + jogador.PercErros.ToString("0.00") + "%";
-            //valendoooooo
-            tmrQuiz.Start();
-        }
 
-        private void btnProximaQuestao_Click(object sender, EventArgs e)
-        {
-            ChamarProximaQuestao();
+            pnlAlternativaA.BackColor = Color.WhiteSmoke;
+            pnlAlternativaB.BackColor = Color.WhiteSmoke;
+            pnlAlternativaC.BackColor = Color.WhiteSmoke;
+            pnlAlternativaD.BackColor = Color.WhiteSmoke;
+            txtbxAlternativaA.BackColor = pnlAlternativaA.BackColor;
+            txtbxAlternativaB.BackColor = pnlAlternativaB.BackColor;
+            txtbxAlternativaC.BackColor = pnlAlternativaC.BackColor;
+            txtbxAlternativaD.BackColor = pnlAlternativaD.BackColor;
+
+            //inicia a contagem após configurar os dados na tela
+            tmrQuiz.Start();
         }
 
         private void FrmQuiz_Shown(object sender, EventArgs e)

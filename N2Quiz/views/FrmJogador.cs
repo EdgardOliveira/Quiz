@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace N2Quiz
@@ -21,7 +22,7 @@ namespace N2Quiz
         {
             bool status = true;
 
-            if (String.IsNullOrEmpty(txtbxNome.Text))
+            if ((String.IsNullOrEmpty(txtbxNome.Text)) || (txtbxNome.Text.Length<5))
                 status = false;
 
             return status;
@@ -56,6 +57,16 @@ namespace N2Quiz
 
         private void txtbxNome_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //bloqueando caracteres especiais
+            /**var regex = new Regex(@"[^a-zA-Z0-9\s]");
+            if (regex.IsMatch(e.KeyChar.ToString()))
+            {
+                e.Handled = true;
+            }**/
+
+            e.Handled = e.KeyChar != (char)Keys.Back && !char.IsSeparator(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsDigit(e.KeyChar);
+
+            //enter como tecla tab
             if (e.KeyChar == 13)
             {
                 e.Handled = true;
