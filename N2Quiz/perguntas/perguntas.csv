@@ -1,4 +1,21 @@
-﻿numero;questao;a;b;c;d;resposta
-1;quem descobriu o brasil?;pedro alvares carbajal;pedro alvares cabral;dom pedro;lula;b
-2;quem nasceu primeiro?;Adão;Eva;ovo;galinha;a
-3;você acha que irá ter alunos suficientes pro 4º período?;sim;não;com certeza;talvez;c
+Numero;Pergunta;AlternativaA;AlternativaB;AlternativaC;AlternativaD;Resposta
+01;Quantos tipos de níveis de escalonamento existem?;1;2;3;4;C
+02;O que é escalonamento de processos?;Representa a abstração de um programa sendo executado.;Servir o maior número possível de processos por unidade de tempo.;Para prevenir que qualquer processo monopolize o sistema.;É a tarefa de decidir qual processo irá ocupar o processador quando este ficar livre.;D
+03;Como o escalonamento de baixo nível é realizado?;Dispatcher;Memória;CPU;Processo;A
+04;Como é caracterizado o escalonamento não-preemptivo?;Uma vez que um processo tenha ganho a CPU, esta não pode ser tirada do mesmo.;O overhead é justivicado pelo aumento da responsividade do sistema.;Manter processos que não estão executando na memória principal.;Um processo pode perder a CPU para algum outro processo.;A
+05;Como é caracterizado o escalonamento preemptivo?;Uma vez que um processo tenha ganho a CPU, esta não pode ser tirada do mesmo.;O overhead é justivicado pelo aumento da responsividade do sistema.;Manter processos que não estão executando na memória principal.;Um processo pode perder a CPU para algum outro processo.;D
+06;Quando um determinado processo está em aguardo para ser selecionado pelo escalonador de curto prazo para receber o processador e poder executar, ele está no estado:;Suspenso;Despacho;Espera;Bloqueado;C
+07;Quais das alternativas abaixo são objetivos de um algoritmo de escalonamento para sistemas interativos:;Vazão e tempo de retorno;Utilização da CPU e proporcionalidade;Tempo de resposta e proporcionalidade;Vazão e utilização da CPU;C
+08;Qual dos algoritmos abaixo são do tipo preemptivo?;FIFO;Cooperativo;Round Robin;LIFO;C
+09;Quais os 4 estados do processo?;Execução, Bloqueado, Pronto, Termino;Execução, Suspenso, Pronto, Termino;Espera, Bloqueado, Pronto, Termino;Execução, Bloqueado, Pronto, Finalizado;A
+10;Como é caracterizado o processo?;Quando está rodando;Representa uma abstração de um programa sendo executado;Quando for iniciado;Quando for finalizado;B
+11;Qual das seguintes funções não está contida no núcleo do sistema operacional?;Comunicação entre processos;Troca de contexto dos processos (Dispatching);Criação e destruição de processos;Suspensão dos estados do processo;D
+12;Quanto à ocorrência de interrupções, é correto afirmar que:;Quando em grandes sistemas multiusuários, há uma enorme quantidade de interrupções direcionadas ao processador.;O núcleo habilita as interrupções, enquanto está respondendo uma interrupção.;Os núcleos são projetados para fazer um maior processamento de cada interrupção.;O centro é uma das mais importantes funções de processamento das interrupções.;A
+13;Quais os seis tipos de interrupção?;SVC, E/S, externas, reinício, erro de programa e erro de máquina.;E/S, internas, erro de máquina, SVC, início e erro de programa.;Externas, internas, reinício, erro de programa e máquina, SVC e CPU;SVC, E/S, internas, início, erro de máquina e erro de programa;A
+14;É uma solicitação gerada pelo usuário, tal como entrada/saída para obter mais memória, ou comunicar com o operador do sistema.;Interrupções de reinício;E/S;SVC;Interrupções externas;C
+15;Podemos classificar em dois tipos as interrupções pela origem:;Interrupções de Hardware e Software;Interrupções de E/S e Erro de Máquina;Interrupções de SVC e Software;Interrupções de kernel e de reinício;A
+16;As transição entre os estados são quatro:;Pronto, Execução, Bloqueado, Nulo.;Dispath, Timerunout, Block, Wakeup.;Wakeup, Block, Preemptivo, Não-preemptivo.;Processo, Suspenso, Dispath, Wakeup.;B
+17;Qual o nome da TRANSIÇÃO entre o estado de PRONTO e EXECUÇÃO respectivamente.;Time Run Out.;Wake Up;Block;Dispatch;D
+18;Sistemas que gerenciam processos devem ser capazes de realizar operações básicas sobre processos. Qual das alternativas não é uma operação básica?;Criar o descritor do processo.;Destruir um processo.;Criar um processo.;Bloquear um processo.;A
+19;A criação de um processo envolve várias ações. Qual entre essas acões não faz parte da criação de um processo?;Nomear o processo.;Determinar a prioridade inicial do processo;Alocar os recursos iniciais do processo.;Suspender um processo;D
+20;Qual o nome da TRANSIÇÃO entre o estado de EXECUÇÃO e PRONTO respectivamente.;Time Run Out;Wake Up;Término;Dispatch;A
